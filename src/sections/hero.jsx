@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const Hero = () => {
     return (
-        <section className="min-h-screen grid place-items-center hero">
+        <section id="hero" className="min-h-screen grid place-items-center hero">
             <BlurFade yOffset='0'>
                 <div className="relative flex flex-col w-full items-center justify-center rounded-lg px-4 container py-24">
                     <BlurFade yOffset='0' className='z-10 py-2 px-4 mb-8 bg-sky-400/30 rounded-full backdrop-blur-sm text-sm md:text-base' delay={0.25}>
