@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const Navlink = ({ name, link }) => {
     return (
         <a href={link} className="tracking-[-0.06em] relative group overflow-hidden inline-block">
-            <span className="block duration-500 transform relative group-hover:-translate-y-12">
+            <span className="block duration-500 relative group-hover:-translate-y-12">
                 {name}
             </span>
             <span className="absolute left-0 top-0 duration-500 translate-y-12 group-hover:translate-y-0">
@@ -47,19 +47,19 @@ const Header = () => {
         setTimeout(() => {
             setIsModalOpen(true);
             setHandling(false);
-        }, 1000);
+        }, 750);
     };
-
 
     return (
         <div className="fixed flex w-full top-0 h-[48px] items-center justify-between px-4 bg-white/90 backdrop-blur z-50 border-b-primary border-b">
+            {/* Logo */}
             <a href="#hero" className="relative flex size-16">
                 <Image alt="Expert HR Outsourcing manpower australian mortgage broker web development assistance help logo" fill src="/images/logo.png" />
             </a>
             {/* Fullscreen navbar */}
             <div className="sm:flex hidden gap-4 items-center justify-center">
                 <Navlink name="About" link="#about" />
-                <Navlink name="Services" link="#services" />
+                {/* <Navlink name="Services" link="#services" /> */}
                 <Navlink name="Testimonials" link="#testimonials" />
                 <Navlink name="FAQ" link="#faq" />
                 <a
@@ -68,12 +68,13 @@ const Header = () => {
                     href="#cta"
                 >
                     {handling && <Loader className="animate-spin absolute" size={20} />}
-                    <span className={cn("block duration-500 transform relative group-hover:-translate-y-12", handling && 'invisible')}>
+                    <span className={`block relative group-hover:-translate-y-12 ${handling ? "invisible" : ""}`} style={{ transition: "transform 0.5s" }}>
                         Connect
                     </span>
-                    <span className={cn("absolute left-1/2 top-1/2 duration-500 translate-x-[-50%] translate-y-12 group-hover:translate-y-[-50%]", handling && 'invisible')}>
+                    <span style={{ transition: "transform 0.5s" }} className={`absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-12 group-hover:translate-y-[-50%] ${handling ? "invisible" : ""}`}>
                         Connect
                     </span>
+
                 </a>
             </div>
             {/* Mobile navbar */}
