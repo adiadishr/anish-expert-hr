@@ -62,9 +62,18 @@ const Header = () => {
                 <Navlink name="Services" link="#services" />
                 <Navlink name="Testimonials" link="#testimonials" />
                 <Navlink name="FAQ" link="#faq" />
-                <a onClick={handleConnectClick} className="px-2 py-1 flex items-center justify-center tracking-[-0.06em] bg-primary rounded-md hover:opacity-80 duration-300 text-white" href="#cta">
+                <a
+                    onClick={handleConnectClick}
+                    className="px-2 relative py-1 flex items-center justify-center tracking-[-0.06em] bg-primary rounded-md hover:opacity-80 duration-300 text-white overflow-hidden group"
+                    href="#cta"
+                >
                     {handling && <Loader className="animate-spin absolute" size={20} />}
-                    <span className={cn(handling && 'invisible')}>Connect</span>
+                    <span className={cn("block duration-500 transform relative group-hover:-translate-y-12", handling && 'invisible')}>
+                        Connect
+                    </span>
+                    <span className={cn("absolute left-1/2 top-1/2 duration-500 translate-x-[-50%] translate-y-12 group-hover:translate-y-[-50%]", handling && 'invisible')}>
+                        Connect
+                    </span>
                 </a>
             </div>
             {/* Mobile navbar */}
@@ -95,7 +104,7 @@ const Header = () => {
                     variants={{ open: { visibility: 'visible', height: '100vh' }, close: { visibility: 'hidden', height: 0 } }}
                     transition={{ duration: 1, ease: [0.860, 0.000, 0.070, 1.000], bounce: 0.3, }}
                     animate={nav ? "open" : "close"}
-                    className='fixed w-full inset-0 z-[50] bg-primary px-4 backdrop-blur-lg flex items-center justify-center'
+                    className='fixed w-full inset-0 z-[50] hero px-4 backdrop-blur-lg flex items-center justify-center'
                 >
                     <motion.div
                         variants={{ open: { visibility: 'visible', opacity: 1 }, close: { visibility: 'hidden', opacity: 0 } }}

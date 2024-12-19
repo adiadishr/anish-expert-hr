@@ -6,15 +6,9 @@ const Testimonials = () => {
 
     const reviews = [
         {
-            name: "Meena Karki",
+            name: "Uddav Bhatta",
             username: "Mortgage Broker",
             body: "Their compliance management services have been a lifesaver. I no longer worry about regulatory requirements, and my business runs smoothly.",
-            img: "https://github.com/shadcn.png",
-        },
-        {
-            name: "Suresh Poudel",
-            username: "Mortgage Broker",
-            body: "Expert HR Outsourcing has streamlined my loan application process, ensuring faster approvals and happier clients. Their attention to detail is unmatched!",
             img: "https://github.com/shadcn.png",
         },
         {
@@ -30,13 +24,7 @@ const Testimonials = () => {
             img: "https://github.com/shadcn.png",
         },
         {
-            name: "Anjana Gautam",
-            username: "IT Consultant",
-            body: "The IT support team is incredibly responsive and efficient. Their marketing strategy development helped me launch a successful campaign seamlessly!",
-            img: "https://github.com/shadcn.png",
-        },
-        {
-            name: "Rabin Thapa",
+            name: "Santosh Shrestha",
             username: "Mortgage Broker",
             body: "Document handling has always been a challenge, but Expert HR Outsourcing made it effortless. My clients appreciate the efficiency!",
             img: "https://github.com/shadcn.png",
